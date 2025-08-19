@@ -1,0 +1,16 @@
+package com.bluepal.dto;
+
+import java.math.BigDecimal;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class PurchaseRequest {
+    private Long itemId;
+    private Long buyerId;
+    private BigDecimal finalPrice;
+}
