@@ -1,6 +1,7 @@
 package com.bluepal.service;
 
 import java.time.Instant;
+import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -36,24 +37,43 @@ public class ItemServiceIMPL implements ItemService {
 	public Page<ItemRes> live(Pageable pageable) {
 		return itemsRepository.findLive(pageable, Instant.now()).map(this::toRes);
 	}
+	
+	
+//	public List<Item> live(Pageable pageable) {
+//		return itemsRepository.findAll();
+//	}
 
-	private ItemRes toRes(Item i) {
-		return ItemRes.builder().id(i.getId()).name(i.getName()).description(i.getDescription())
-				.startingPrice(i.getStartingPrice()).auctionStart(i.getAuctionStart()).auctionEnd(i.getAuctionEnd())
-				.status(i.getStatus().name()).seller(i.getSeller().getUsername()).build();
+
+	private ItemRes toRes(Item item) {
+		return ItemRes.builder().id(item.getId()).name(item.getName()).description(item.getDescription())
+				.startingPrice(item.getStartingPrice()).auctionStart(item.getAuctionStart())
+				.auctionEnd(item.getAuctionEnd()).status(item.getStatus().name()).seller(item.getSeller().getUsername())
+				.imageUrl(item.getImageUrl()) // ✅ Map imageUrl here
+				.build();
 	}
 
 	public Page<ItemRes> getLiveItems(Pageable pageable) {
-	    Page<Item> items = itemsRepository.findByStatus(Item.Status.LIVE, pageable);
-	    return items.map(item -> new ItemRes(
-	            item.getId(),
-	            item.getName(),
-	            item.getStartingPrice(), // ✅ correct field
-	            item.getStatus().name()
-	    ));
+		Page<Item> items = itemsRepository.findByStatus(Item.Status.LIVE, pageable);
+		return items.map(item -> ItemRes.builder() // Use builder here to ensure all fields are populated
+				.id(item.getId()).name(item.getName()).description(item.getDescription())
+				.startingPrice(item.getStartingPrice()).auctionStart(item.getAuctionStart())
+				.auctionEnd(item.getAuctionEnd()).status(item.getStatus().name()).seller(item.getSeller().getUsername())
+				.imageUrl(item.getImageUrl()) // ✅ Include imageUrl in the response
+				.build());
+	}
 	
+	@Transactional
+	public void deleteById(String username, Long id) {
+	    Item item = itemsRepository.findById(id)
+	            .orElseThrow(() -> new RuntimeException("Item not found with id " + id));
 
-    }
-	
-	
+	    // ✅ Only seller can delete their own item
+	    if (!item.getSeller().getUsername().equals(username)) {
+	        throw new RuntimeException("You are not allowed to delete this item");
+	    }
+
+	    itemsRepository.delete(item);
+	}
+
+
 }

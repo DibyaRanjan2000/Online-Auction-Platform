@@ -18,6 +18,6 @@ public class BidEventsListener {
 	public void onBidPlaced(BidPlacedEvent evt) {
 		Map<String, Object> payload = Map.of("itemId", evt.itemId(), "amount", evt.amount(), "bidder", evt.bidder(),
 				"at", evt.at().toString());
-		template.convertAndSend("/topic/auctions/" + evt.itemId(), payload);
+		template.convertAndSend("/topic/bids/" + evt.itemId(), payload);
 	}
 }

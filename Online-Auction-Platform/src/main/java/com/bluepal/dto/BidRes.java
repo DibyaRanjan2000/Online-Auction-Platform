@@ -13,4 +13,10 @@ public class BidRes {
 	BigDecimal highest;
 	String highestBidder;
 	Instant at;
+	String itemName;   
+    String imageUrl;
+    
+    public BidRes(Long itemId, BigDecimal highest, String highestBidder, Instant at) {
+        this(itemId, highest, highestBidder, at, null, null);
+    }
 }

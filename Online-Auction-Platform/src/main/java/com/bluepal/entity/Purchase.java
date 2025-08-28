@@ -42,4 +42,14 @@ public class Purchase {
 	private BigDecimal finalPrice;
 	@Column(nullable = false)
 	private Instant purchasedAt;
+	
+	@Column(name = "razorpay_order_id", unique = true)
+    private String razorpayOrderId;
+	
+	private String itemName;
+    private String buyerUsername;
+	
+	
+//    private String razorpayPaymentId;
+//    private String razorpaySignature;
 }

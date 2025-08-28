@@ -1,5 +1,4 @@
 
-
 package com.bluepal.dto;
 
 import lombok.Builder;
