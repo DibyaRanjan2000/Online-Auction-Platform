@@ -1,0 +1,130 @@
+/* Background with Blue Finance Theme */
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #004aad, #1e90ff);
+  font-family: "Poppins", sans-serif;
+
+  background-image: url("../../public/black-lives-matter-protesting-with-copy-space.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Glassmorphism Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  padding: 40px 35px;
+  border-radius: 16px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Title */
+.login-card h2 {
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffcc00; /* gold accent like money */
+}
+
+.login-card .subtitle {
+  font-size: 14px;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #f5f5f5;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 8px rgba(0, 74, 173, 0.6);
+  transform: scale(1.02);
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #ffcc00, #ffd633);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+  background: linear-gradient(90deg, #ffd633, #ffe066);
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Error message */
+.error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Footer Links */
+.extra-links {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #f5f5f5;
+}
+
+.extra-links a {
+  color: #ffcc00;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

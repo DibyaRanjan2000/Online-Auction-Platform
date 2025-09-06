@@ -1,0 +1,101 @@
+.bid-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  background: linear-gradient(rgba(0, 74, 173, 0.7), rgba(0, 198, 255, 0.7)),
+              url("../../public/black-lives-matter-protesting-with-copy-space.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* Card */
+.bid-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.bid-card img {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.bid-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #004aad;
+}
+
+.bid-card p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* Bid Form */
+.bid-form {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.bid-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.bid-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.bid-form input:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 6px rgba(0, 198, 255, 0.5);
+}
+
+/* Button */
+.bid-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #004aad, #00c6ff);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.bid-form button:hover {
+  background: linear-gradient(135deg, #003080, #0096d6);
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,171 @@
+.contact-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Left Side - Form */
+.form-title {
+  margin-bottom: 30px;
+  color: #0a2a66;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.form-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  background: linear-gradient(to right, #007bff, #00bfff);
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.success-msg {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Right Side - Info */
+.contact-info {
+  background: #0a2a66;
+  color: white;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 480px;
+  font-size: 18px;
+}
+
+.contact-info h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.info-box {
+  background: #113b80;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.icon {
+  margin-right: 12px;
+  color: #ffcc00;
+  font-size: 20px;
+}
+
+.socials {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.social-icons {.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 80px;
+  gap: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form {
+  flex: 1;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.contact-info {
+  flex: 1;
+  background: #0a2a5e;
+  color: #fff;
+  border-radius: 8px;
+  padding: 25px;
+}
+
+.contact-info h3 {
+  margin-bottom: 15px;
+}
+
+.info-box {
+  margin-bottom: 15px;
+}
+
+  display: flex;
+  gap: 20px;
+  font-size: 26px;
+  margin-top: 10px;
+}

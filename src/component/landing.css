@@ -1,0 +1,74 @@
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #2563eb, #4338ca);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #dbeafe;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Featured Section */
+.featured-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Fixed Card */
+.auction-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;   /* fixed width */
+  height: 350px;  /* fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Fixed Image */
+.auction-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Card Content */
+.auction-content {
+  flex-grow: 1;
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* Categories */
+.categories {
+  background: #f3f4f6;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(to right, #4338ca, #6d28d9);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}

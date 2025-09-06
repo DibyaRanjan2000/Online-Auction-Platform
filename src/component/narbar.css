@@ -1,0 +1,350 @@
+/* ============================= */
+/* 🌐 Professional Navbar + Popup + Sidebar + History */
+/* ============================= */
+
+/* 🌍 Global Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #121212;
+  color: #fff;
+}
+
+/* ============================= */
+/* 🌐 Navbar */
+/* ============================= */
+.navbar {
+  width: 97%;
+  background: #1e1e2f; /* dark navy */
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #00aaff;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  color: #e4e4e4;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #00aaff;
+}
+
+.login-btn {
+  padding: 8px 18px;
+  background: #00aaff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-left: 15px;
+}
+
+.login-btn:hover {
+  background: #0088cc;
+  transform: translateY(-1px);
+}
+
+/* .profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #00aaff;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+} */
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2.5px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: #252538;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    display: none;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ============================= */
+/* 🔒 Popup */
+/* ============================= */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(2px);
+}
+
+.popup {
+  background: #2b2b40;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #00aaff;
+}
+
+.popup p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #cccccc;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cancel-btn,
+.logout-btn {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cancel-btn {
+  background: #444;
+  color: white;
+}
+.cancel-btn:hover {
+  background: #555;
+}
+
+.logout-btn {
+  background: #e63946;
+  color: white;
+}
+.logout-btn:hover {
+  background: #c72c3a;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ============================= */
+/* 📂 Sidebar */
+/* ============================= */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1500;
+  backdrop-filter: blur(4px);
+}
+
+.sidebar {
+  width: 270px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-left: 2px solid rgba(255,255,255,0.3);
+  padding: 20px;
+  box-shadow: -4px 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px 0 0 12px;
+  animation: slideInRight 0.3s ease forwards;
+  color: white;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  padding: 14px;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.sidebar-links li:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* 📊 History Table (Responsive) */
+/* ============================= */
+.history-popup {
+  max-width: 900px;
+  width: 95%;
+  background: #1e1e2f;
+  border-radius: 12px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid #2f2f44;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.history-table th {
+  background-color: #2b2b40;
+  font-weight: bold;
+  color: #00aaff;
+}
+
+.history-table tr:nth-child(even) {
+  background: rgba(255,255,255,0.05);
+}
+
+.history-table tr:hover {
+  background: rgba(0,170,255,0.1);
+}
+
+@media (max-width: 600px) {
+  .history-table th,
+  .history-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* ✅ Profile Avatar Fix */
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;   /* Makes it circular */
+  border: 2px solid #00aaff;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  /* ✅ Prevent stretching / overflow */
+  object-fit: cover;    /* Keeps correct aspect ratio */
+  flex-shrink: 0;       /* Stops shrinking in flexbox */
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
